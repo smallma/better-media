@@ -1,6 +1,6 @@
 # better-media
 
-  ## What is it?
+## What is it?
   -----------
 
   This better-media helps to use cordova media plugin more convenience.
