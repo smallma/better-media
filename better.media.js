@@ -1,5 +1,4 @@
 (function() {
-    var opts;
     var attrs = {
         // media play
         playingSrc: null,
@@ -16,16 +15,6 @@
     };
 
     function BetterMedia (src, options) {
-        function emptyFunction(){}
-        opts = options || {};
-
-        //opts
-        opts.timeupdate = options.timeupdate || emptyFunction;
-        opts.playing = options.playing || emptyFunction;
-        opts.pause = options.pause || emptyFunction;
-        opts.ended = options.ended || emptyFunction;
-        opts.release = options.release || emptyFunction;
-
         function _mediaController(src, status) {
             if (!src) {
                 return;
@@ -242,7 +231,7 @@
 
                 // start to count down
                 attrs.recordLimitSecTimer = setTimeout(function() {
-                    Ext.Msg.alert('', 'Time\'s up, record finished.', Ext.emptyFn);
+                    console.log('Time\'s up, record finished.');
                     
                     attrs.recordItem.stopRecord();
                     that._clearRecordTimer.apply(that);
